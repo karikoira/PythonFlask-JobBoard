@@ -23,6 +23,11 @@ def execute_sql(sql, values=(), commit=False, single=False):
     cursor.clone()
     return results
 
+def close_connection(exeption):
+    connection = getattr(g, '_connection', None)
+    if connection is not None:
+        connection.close()
+
 @app.route('/')
 @app.route('/jobs')
 def jobs():
