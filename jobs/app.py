@@ -34,3 +34,6 @@ def close_connection(exeption):
 def jobs():
     jobs = execute_sql('SELECT job.id, job.title, job.description, job.salary, employer.id as employer.name as employer_name FROM job JOIN employer ON employer.id = job.employer_id')
     return render_template('index.html', jobs=jobs)
+
+app.jinja_env.trim_blocks = True
+app.jinja_env.lstrip_blocks = True
