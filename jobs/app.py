@@ -41,7 +41,10 @@ def job(job_id):
     return render_template('job.html', job=job)
 
 @app.route('/employer/<employer_id>')
-def employer():
-    return render_template('employer.html')
+def employer(employer_id):
+    employer = execute_sql('SELECT * FROM employer WHERE id=?', [employer_id], single=True)
+    return render_template('employer.html', employer=employer)
+
+
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
