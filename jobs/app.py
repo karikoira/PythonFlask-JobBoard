@@ -50,12 +50,4 @@ def employer(employer_id):
 
 @app.route('/employer/<employer_id/review', method=('GET', 'POST'))
 def review(employer_id):
-    if request.method == 'POST':
-        review = request.form['review']
-        review = request.form['rating']
-        review = request.form['title']
-        review = request.form['status']
-
-        date = datetime.datetime.now().strftime("%m/%d/%Y")
     return render_template('review.html', employer_id=employer_id)
-    
