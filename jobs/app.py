@@ -56,5 +56,5 @@ def review(employer_id):
         review = request.form['title']
         review = request.form['status']
 
-        date = datetime.datetime.now().strftime("%m/%d/%Y"
+        date = datetime.datetime.now().strftime("%m/%d/%Y")
     return render_template('review.html', employer_id=employer_id)
