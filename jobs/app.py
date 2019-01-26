@@ -50,5 +50,3 @@ def employer(employer_id):
 @app.route('/employer/<employer_id>/review', method=('GET', 'POST'))
 def review(employer_id):
     return render_template('review.html', employer_id=employer_id)
-app.jinja_env.trim_blocks = True
-app.jinja_env.lstrip_blocks = True
